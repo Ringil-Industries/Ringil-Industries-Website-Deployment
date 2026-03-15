@@ -3,19 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ringil Industries LLC</title>
+  <title>Ringil Industries — Autonomous Active Protection Systems</title>
   <meta
     name="description"
-    content="Ringil Industries builds autonomous active protection systems for the modern battlefield."
+    content="Ringil Industries builds autonomous active protection systems for modern battlefield drone threats."
   >
-  <meta property="og:title" content="Ringil Industries LLC">
-  <meta property="og:description" content="Autonomous active protection systems for modern battlefield threats.">
+  <link rel="canonical" href="https://ringilindustries.com/">
+  <meta property="og:title" content="Ringil Industries — Autonomous Active Protection Systems">
+  <meta property="og:description" content="Ringil Industries builds autonomous active protection systems for modern battlefield drone threats.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ringilindustries.com/">
+  <meta property="og:site_name" content="Ringil Industries">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ringil Industries LLC">
-  <meta name="twitter:description" content="Autonomous active protection systems for modern battlefield threats.">
+  <meta name="twitter:title" content="Ringil Industries — Autonomous Active Protection Systems">
+  <meta name="twitter:description" content="Ringil Industries builds autonomous active protection systems for modern battlefield drone threats.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0F'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%2300BFFF' stroke-width='4'/%3E%3Cpath d='M32 12v40M12 32h40' stroke='%2300BFFF' stroke-width='3'/%3E%3C/svg%3E">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Ringil Industries LLC",
+      "url": "https://ringilindustries.com/",
+      "logo": "https://ringilindustries.com/favicon.ico",
+      "description": "Autonomous active protection systems for modern battlefield drone threats.",
+      "foundingDate": "2026",
+      "industry": "Defense and Space Manufacturing",
+      "email": "asvath.madhan@ringilindustries.com",
+      "telephone": "+1-979-317-4433",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5900 Balcones Drive Ste 100",
+        "addressLocality": "Austin",
+        "addressRegion": "TX",
+        "postalCode": "78731",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://x.com/RingilI_Ind",
+        "https://www.linkedin.com/company/ringil-industries/",
+        "https://www.youtube.com/@RingilIndustriesLLC",
+        "https://github.com/Ringil-Industries"
+      ]
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -92,12 +122,82 @@
       border-color: rgba(0, 191, 255, 0.6);
     }
 
+    .btn-animated {
+      position: relative;
+      overflow: hidden;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .btn-animated::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.18) 50%, transparent 100%);
+      transform: skewX(-20deg);
+      transition: left 420ms ease;
+    }
+
+    .btn-animated:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 191, 255, 0.18);
+    }
+
+    .btn-animated:hover::after {
+      left: 135%;
+    }
+
+    .fade-item {
+      opacity: 0;
+      transform: translateY(16px);
+      filter: blur(2px);
+      transition: opacity 420ms ease, transform 420ms ease, filter 420ms ease;
+    }
+
+    .fade-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .problem-rail {
+      border-left: 1px solid rgba(0, 191, 255, 0.24);
+      margin-left: 0.3rem;
+      padding-left: 0.9rem;
+    }
+
+    .problem-event {
+      position: relative;
+      border-bottom: 1px dashed rgba(0, 191, 255, 0.16);
+      padding: 0.95rem 0 0.95rem 0.9rem;
+    }
+
+    .problem-event::before {
+      content: "";
+      position: absolute;
+      left: -1.27rem;
+      top: 1.45rem;
+      width: 0.48rem;
+      height: 0.48rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(0, 191, 255, 0.52);
+      background: rgba(10, 10, 15, 0.9);
+      box-shadow: 0 0 8px rgba(0, 191, 255, 0.2);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal,
       .reveal.is-visible,
-      .interactive-card {
+      .interactive-card,
+      .fade-item,
+      .fade-item.is-visible,
+      .btn-animated,
+      .btn-animated::after {
         opacity: 1;
         transform: none;
+        filter: none;
         transition: none;
       }
     }
@@ -109,7 +209,7 @@
       <a href="#top" class="text-sm font-medium tracking-[0.18em] text-ringilText md:text-base">RINGIL INDUSTRIES</a>
       <a
         href="#contact"
-        class="rounded border border-ringilAccent/50 px-3 py-1.5 text-xs font-medium tracking-[0.14em] text-ringilAccent transition hover:bg-ringilAccent hover:text-ringilBg focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg md:text-sm"
+        class="btn-animated rounded border border-ringilAccent/50 px-3 py-1.5 text-xs font-medium tracking-[0.14em] text-ringilAccent transition hover:bg-ringilAccent hover:text-ringilBg focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg md:text-sm"
       >CONTACT</a>
     </div>
   </header>
@@ -122,13 +222,15 @@
       <div class="radar-ring absolute left-1/2 top-1/2 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 animate-sweep blur-[0.3px]"></div>
 
       <div class="mx-auto max-w-6xl">
-        <p class="mb-5 text-xs uppercase tracking-[0.3em] text-ringilMuted">Autonomous Active Protection</p>
-        <h1 class="max-w-5xl text-5xl font-bold uppercase leading-[0.95] tracking-tight text-white md:text-7xl lg:text-8xl">
-          Ringil Industries LLC
-        </h1>
-        <p class="mt-6 max-w-3xl text-xl text-ringilText md:text-2xl">
-          Deny the sky.
-        </p>
+        <div class="max-w-4xl">
+          <p class="mb-5 pl-1 text-xs uppercase tracking-[0.3em] text-ringilMuted md:pl-1.5">Autonomous Active Protection</p>
+          <h1 class="text-5xl font-bold uppercase leading-[0.95] tracking-tight text-white md:text-7xl lg:text-8xl">
+            Ringil Industries LLC
+          </h1>
+          <p class="mt-6 text-xl text-ringilText md:text-2xl">
+            Deny the sky.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -137,11 +239,11 @@
     <section id="problem" class="reveal mx-auto max-w-6xl px-6 py-20 md:py-28">
       <p class="text-xs uppercase tracking-[0.28em] text-ringilMuted">The Problem</p>
       <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">FPV drones changed the economics of lethality.</h2>
-      <div class="mt-8 max-w-3xl space-y-4 text-lg leading-relaxed text-ringilText">
-        <p>By 2025, public reporting estimated drones were responsible for roughly 70% of casualties in Ukraine.</p>
-        <p>Low-cost drones now threaten armored platforms, fixed positions, and logistics chains at scale.</p>
-        <p>Defenders absorb high replacement costs while attackers iterate rapidly with commodity components.</p>
-        <p>Conventional protection stacks were not designed for persistent, distributed aerial attacks.</p>
+      <div class="problem-rail mt-8 max-w-4xl text-lg leading-relaxed text-ringilText">
+        <p class="problem-event fade-item">By 2025, public reporting estimated drones were responsible for roughly 70% of casualties in Ukraine.</p>
+        <p class="problem-event fade-item">Low-cost drones now threaten armored platforms, fixed positions, and logistics chains at scale.</p>
+        <p class="problem-event fade-item">Defenders absorb high replacement costs while attackers iterate rapidly with commodity components.</p>
+        <p class="problem-event fade-item">Conventional protection stacks were not designed for persistent, distributed aerial attacks.</p>
       </div>
       <p class="mt-6 max-w-3xl text-sm text-ringilMuted">
         Source note: estimate derived from open-source 2025 battlefield reporting; figures vary by methodology and reporting period.
@@ -156,25 +258,25 @@
       <p class="mt-8 max-w-3xl text-lg leading-relaxed text-ringilText">
         Ringil-1 is a modular active protection system built for vehicle-mounted deployment, designed to adapt across platform classes with minimal integration overhead.
       </p>
-      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
         <article class="interactive-card rounded border border-ringilAccent/30 bg-ringilPanel p-6 shadow-glow">
-          <p class="text-xs uppercase tracking-[0.24em] text-ringilMuted">Target Engagement Cost</p>
+          <p class="text-xs uppercase tracking-[0.24em] text-ringilMuted">Engagement Cost</p>
           <p class="mt-2 text-3xl font-semibold text-white">&lt; $150</p>
-          <p class="mt-2 text-sm text-ringilText">Development target for low-cost defense against repeated drone attacks.</p>
+          <p class="mt-2 text-sm text-ringilText">Low-cost defense against repeated drone attacks.</p>
         </article>
         <article class="interactive-card rounded border border-ringilAccent/30 bg-ringilPanel p-6 shadow-glow">
-          <p class="text-xs uppercase tracking-[0.24em] text-ringilMuted">Target Engagement Time</p>
+          <p class="text-xs uppercase tracking-[0.24em] text-ringilMuted">Engagement Time</p>
           <p class="mt-2 text-3xl font-semibold text-white">&lt; 500 ms</p>
-          <p class="mt-2 text-sm text-ringilText">Development target for fast threat response in close-range intercept windows.</p>
+          <p class="mt-2 text-sm text-ringilText">Fast threat response in close-range intercept windows.</p>
+        </article>
+        <article class="interactive-card rounded border border-ringilAccent/30 bg-ringilPanel p-6 shadow-glow">
+          <p class="text-xs uppercase tracking-[0.24em] text-ringilMuted">Total System Cost</p>
+          <p class="mt-2 text-3xl font-semibold text-white">&lt; $50K</p>
+          <p class="mt-2 text-sm text-ringilText">Modular, vehicle-mounted integration across diverse fleets.</p>
         </article>
       </div>
-      <article class="interactive-card mt-4 rounded border border-ringilAccent/30 bg-ringilPanel p-6 shadow-glow sm:max-w-[50%]">
-        <p class="text-xs uppercase tracking-[0.24em] text-ringilMuted">Target Total System Cost</p>
-        <p class="mt-2 text-3xl font-semibold text-white">&lt; $50K</p>
-        <p class="mt-2 text-sm text-ringilText">Development target with modular, vehicle-mounted integration across diverse fleets.</p>
-      </article>
       <p class="mt-6 max-w-3xl text-sm text-ringilMuted">
-        All performance and cost values shown are development targets and subject to testing, validation, and program updates.
+        All metrics are currently in development and are best estimates of current performance, not final values.
       </p>
     </section>
 
@@ -185,53 +287,118 @@
       <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">Early stage. Building with intent.</h2>
       <div class="mt-8 max-w-3xl space-y-4 text-lg leading-relaxed text-ringilText">
         <p>Ringil Industries is an early-stage defense technology company actively building and validating autonomous active protection systems.</p>
-        <p>We are not open for press inquiries. We are open to inquiries. Contact us directly.</p>
+        <p>We are not open for press inquiries. We welcome conversations with aligned capital and mission-focused collaborators. Contact us directly.</p>
       </div>
     </section>
 
     <hr class="mx-auto h-px w-[92%] border-0 bg-gradient-to-r from-transparent via-ringilAccent/70 to-transparent shadow-glow">
 
-    <section id="contact" class="reveal mx-auto max-w-6xl px-6 py-20 md:py-28">
+    <section id="contact" class="mx-auto max-w-6xl px-6 pt-16 pb-24 md:pt-20 md:pb-28">
       <p class="text-xs uppercase tracking-[0.28em] text-ringilMuted">Contact</p>
       <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">For inquiries.</h2>
       <p class="mt-8 max-w-3xl text-lg leading-relaxed text-ringilText">
         Reach the team directly for inquiries.
       </p>
-      <div class="mt-8 space-y-4 text-base leading-relaxed text-ringilText">
-        <p class="font-medium text-white">Ringil Industries LLC</p>
-        <p>
-          <a
-            href="mailto:asvath.madhan@ringilindustries.com"
-            class="text-ringilAccent transition hover:text-white focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg"
-          >asvath.madhan@ringilindustries.com</a>
-        </p>
-        <p>
-          <a
-            href="tel:+19793174433"
-            class="text-ringilAccent transition hover:text-white focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg"
-          >979-317-4433</a>
-        </p>
-        <address class="not-italic text-ringilText">
-          5900 Balcones Drive Ste 100<br>
-          Austin, TX 78731
-        </address>
+      <div class="mt-10 grid gap-8 lg:grid-cols-2">
+        <form id="contact-form" class="rounded border border-ringilAccent/30 bg-ringilPanel p-6 shadow-glow">
+          <div class="grid gap-4">
+            <label class="text-sm text-ringilText" for="subject">Subject</label>
+            <input id="subject" name="subject" class="rounded border border-white/20 bg-ringilBg px-3 py-2 text-ringilText focus:border-ringilAccent focus:outline-none" type="text" placeholder="Ringil Website Inquiry">
+            <label class="text-sm text-ringilText" for="message">Message</label>
+            <textarea id="message" name="message" required rows="4" class="rounded border border-white/20 bg-ringilBg px-3 py-2 text-ringilText focus:border-ringilAccent focus:outline-none"></textarea>
+            <button class="btn-animated mt-2 rounded border border-ringilAccent/60 px-5 py-3 text-sm font-medium tracking-[0.14em] text-ringilAccent transition hover:bg-ringilAccent hover:text-ringilBg focus:outline-none focus:ring-2 focus:ring-ringilAccent" type="submit">SEND INQUIRY</button>
+            <p class="text-xs text-ringilMuted">Submitting opens your email client with a subject line and your message body.</p>
+          </div>
+        </form>
+        <div class="space-y-4 text-base leading-relaxed text-ringilText">
+          <p class="font-medium text-white">Ringil Industries LLC</p>
+          <p class="text-sm text-ringilMuted">Deny the sky.</p>
+          <div class="space-y-3 pt-2 text-sm">
+            <div class="flex items-start justify-between gap-4 border-t border-ringilAccent/20 pt-3">
+              <span class="uppercase tracking-[0.16em] text-ringilMuted">Email</span>
+              <a
+                href="mailto:asvath.madhan@ringilindustries.com"
+                class="text-right text-ringilAccent transition hover:text-white focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg"
+              >asvath.madhan@ringilindustries.com</a>
+            </div>
+            <div class="flex items-start justify-between gap-4 border-t border-ringilAccent/20 pt-3">
+              <span class="uppercase tracking-[0.16em] text-ringilMuted">Phone</span>
+              <a
+                href="tel:+19793174433"
+                class="text-right text-ringilAccent transition hover:text-white focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg"
+              >979-317-4433</a>
+            </div>
+            <div class="flex items-start justify-between gap-4 border-t border-ringilAccent/20 pt-3">
+              <span class="uppercase tracking-[0.16em] text-ringilMuted">Address</span>
+              <address class="not-italic text-right text-ringilText">
+                5900 Balcones Drive Ste 100<br>
+                Austin, TX 78731
+              </address>
+            </div>
+            <div class="flex items-start justify-between gap-4 border-t border-ringilAccent/20 pt-3">
+              <span class="uppercase tracking-[0.16em] text-ringilMuted">External</span>
+              <div class="flex flex-wrap justify-end gap-3">
+                <a class="inline-flex h-9 w-9 items-center justify-center rounded border border-ringilAccent/45 text-ringilAccent transition hover:border-ringilAccent hover:bg-ringilAccent hover:text-ringilBg focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg" href="https://x.com/RingilI_Ind" target="_blank" rel="noopener noreferrer" aria-label="X">
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true"><path d="M18.901 2H22l-6.77 7.736L23.2 22h-6.247l-4.89-7.2L5.72 22H2.62l7.24-8.274L1.2 2h6.406l4.418 6.582L18.901 2Zm-1.095 18h1.718L6.674 3.894H4.829L17.806 20Z"/></svg>
+                </a>
+                <a class="inline-flex h-9 w-9 items-center justify-center rounded border border-ringilAccent/45 text-ringilAccent transition hover:border-ringilAccent hover:bg-ringilAccent hover:text-ringilBg focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg" href="https://www.linkedin.com/company/ringil-industries/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5ZM.4 8h4.2v13.5H.4V8Zm7.2 0h4.02v1.84h.06c.56-1.06 1.93-2.18 3.98-2.18 4.26 0 5.04 2.8 5.04 6.44v7.4h-4.2v-6.56c0-1.56-.03-3.56-2.16-3.56-2.16 0-2.5 1.69-2.5 3.45v6.67H7.6V8Z"/></svg>
+                </a>
+                <a class="inline-flex h-9 w-9 items-center justify-center rounded border border-ringilAccent/45 text-ringilAccent transition hover:border-ringilAccent hover:bg-ringilAccent hover:text-ringilBg focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg" href="https://www.youtube.com/@RingilIndustriesLLC" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true"><path d="M23.5 7.2a3 3 0 0 0-2.12-2.12C19.57 4.6 12 4.6 12 4.6s-7.57 0-9.38.48A3 3 0 0 0 .5 7.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 4.8 3 3 0 0 0 2.12 2.12C4.43 19.4 12 19.4 12 19.4s7.57 0 9.38-.48a3 3 0 0 0 2.12-2.12A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-4.8ZM9.6 15.2V8.8l6 3.2-6 3.2Z"/></svg>
+                </a>
+                <a class="inline-flex h-9 w-9 items-center justify-center rounded border border-ringilAccent/45 text-ringilAccent transition hover:border-ringilAccent hover:bg-ringilAccent hover:text-ringilBg focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg" href="https://github.com/Ringil-Industries" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 fill-current" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12A11.5 11.5 0 0 0 8.36 22.9c.58.11.79-.25.79-.56v-2.1c-3.2.7-3.88-1.54-3.88-1.54-.53-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.7 1.25 3.36.96.1-.74.4-1.25.72-1.54-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.28 1.18-3.08-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.18a10.97 10.97 0 0 1 5.74 0c2.18-1.49 3.14-1.18 3.14-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.82 1.18 3.08 0 4.43-2.7 5.4-5.27 5.69.41.36.77 1.06.77 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+  <footer class="border-t border-white/5">
+    <div class="mx-auto max-w-6xl px-6 py-4 text-[11px] tracking-[0.12em] text-ringilMuted">
+      &copy; 2026 Ringil Industries LLC
+    </div>
+  </footer>
   <script>
+    const textTargets = document.querySelectorAll("main section:not(#contact) h1, main section:not(#contact) h2, main section:not(#contact) h3, main section:not(#contact) p, main section:not(#contact) label, main section:not(#contact) address");
+    textTargets.forEach((node) => node.classList.add("fade-item"));
+
+    const textObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("is-visible", entry.isIntersecting);
+        });
+      },
+      { threshold: 0.14 }
+    );
+    textTargets.forEach((node) => textObserver.observe(node));
+
     const reveals = document.querySelectorAll(".reveal");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
+          entry.target.classList.toggle("is-visible", entry.isIntersecting);
         });
       },
       { threshold: 0.16 }
     );
     reveals.forEach((section) => observer.observe(section));
+
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+      contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const formData = new FormData(contactForm);
+        const message = formData.get("message") || "";
+        const subjectValue = String(formData.get("subject") || "").trim();
+        const subject = encodeURIComponent(subjectValue || "Ringil Website Inquiry");
+        const body = encodeURIComponent(String(message));
+        window.location.href = "mailto:asvath.madhan@ringilindustries.com?subject=" + subject + "&body=" + body;
+      });
+    }
   </script>
 </body>
 </html>
