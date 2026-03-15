@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ringil Industries LLC</title>
+  <meta
+    name="description"
+    content="Ringil Industries builds autonomous active protection systems for the modern battlefield."
+  >
+  <meta property="og:title" content="Ringil Industries LLC">
+  <meta property="og:description" content="Autonomous active protection systems for modern battlefield threats.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ringilindustries.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ringil Industries LLC">
+  <meta name="twitter:description" content="Autonomous active protection systems for modern battlefield threats.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0F'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%2300BFFF' stroke-width='4'/%3E%3Cpath d='M32 12v40M12 32h40' stroke='%2300BFFF' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ringilBg: "#0A0A0F",
+            ringilPanel: "#11131A",
+            ringilAccent: "#00BFFF",
+            ringilText: "#D9E5F2",
+            ringilMuted: "#8FA3B8"
+          },
+          fontFamily: {
+            sans: ["Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"]
+          },
+          boxShadow: {
+            glow: "0 0 40px rgba(0, 191, 255, 0.14)"
+          },
+          keyframes: {
+            pulseGrid: {
+              "0%, 100%": { opacity: "0.14" },
+              "50%": { opacity: "0.06" }
+            },
+            sweep: {
+              "0%": { transform: "translateX(-20%)" },
+              "100%": { transform: "translateX(20%)" }
+            }
+          },
+          animation: {
+            pulseGrid: "pulseGrid 6s ease-in-out infinite",
+            sweep: "sweep 7s linear infinite alternate"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(0, 191, 255, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 191, 255, 0.09) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .radar-ring {
+      border: 1px solid rgba(0, 191, 255, 0.2);
+      border-radius: 9999px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .interactive-card {
+      transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+    }
+
+    .interactive-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 48px rgba(0, 191, 255, 0.2);
+      border-color: rgba(0, 191, 255, 0.6);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .reveal.is-visible,
+      .interactive-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-ringilBg text-ringilText antialiased selection:bg-ringilAccent selection:text-ringilBg">
+  <header class="sticky top-0 z-30 border-b border-white/5 bg-ringilBg/80 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#top" class="text-sm font-medium tracking-[0.18em] text-ringilText md:text-base">RINGIL INDUSTRIES</a>
+      <a
+        href="#contact"
+        class="rounded border border-ringilAccent/50 px-3 py-1.5 text-xs font-medium tracking-[0.14em] text-ringilAccent transition hover:bg-ringilAccent hover:text-ringilBg focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg md:text-sm"
+      >CONTACT</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative isolate flex min-h-[calc(100vh-73px)] items-center overflow-hidden px-6">
+      <div class="hero-grid absolute inset-0 -z-20 animate-pulseGrid"></div>
+      <div class="absolute -left-24 top-20 -z-10 h-96 w-96 rounded-full bg-ringilAccent/10 blur-3xl"></div>
+      <div class="absolute -right-24 bottom-10 -z-10 h-80 w-80 rounded-full bg-ringilAccent/10 blur-3xl"></div>
+      <div class="radar-ring absolute left-1/2 top-1/2 -z-10 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 animate-sweep blur-[0.3px]"></div>
+
+      <div class="mx-auto max-w-6xl">
+        <p class="mb-5 text-xs uppercase tracking-[0.3em] text-ringilMuted">Autonomous Active Protection</p>
+        <h1 class="max-w-5xl text-5xl font-bold uppercase leading-[0.95] tracking-tight text-white md:text-7xl lg:text-8xl">
+          Ringil Industries LLC
+        </h1>
+        <p class="mt-6 max-w-3xl text-xl text-ringilText md:text-2xl">
+          Deny the sky.
+        </p>
+      </div>
+    </section>
+
+    <hr class="mx-auto h-px w-[92%] border-0 bg-gradient-to-r from-transparent via-ringilAccent/70 to-transparent shadow-glow">
+
+    <section id="problem" class="reveal mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <p class="text-xs uppercase tracking-[0.28em] text-ringilMuted">The Problem</p>
+      <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">FPV drones changed the economics of lethality.</h2>
+      <div class="mt-8 max-w-3xl space-y-4 text-lg leading-relaxed text-ringilText">
+        <p>By 2025, public reporting estimated drones were responsible for roughly 70% of casualties in Ukraine.</p>
+        <p>Low-cost drones now threaten armored platforms, fixed positions, and logistics chains at scale.</p>
+        <p>Defenders absorb high replacement costs while attackers iterate rapidly with commodity components.</p>
+        <p>Conventional protection stacks were not designed for persistent, distributed aerial attacks.</p>
+      </div>
+      <p class="mt-6 max-w-3xl text-sm text-ringilMuted">
+        Source note: estimate derived from open-source 2025 battlefield reporting; figures vary by methodology and reporting period.
+      </p>
+    </section>
+
+    <hr class="mx-auto h-px w-[92%] border-0 bg-gradient-to-r from-transparent via-ringilAccent/70 to-transparent shadow-glow">
+
+    <section id="solution" class="reveal mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <p class="text-xs uppercase tracking-[0.28em] text-ringilMuted">Our Solution</p>
+      <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">Ringil-1 detects. Tracks. Neutralizes.</h2>
+      <p class="mt-8 max-w-3xl text-lg leading-relaxed text-ringilText">
+        Ringil-1 is a modular active protection system built for vehicle-mounted deployment, designed to adapt across platform classes with minimal integration overhead.
+      </p>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2">
+        <article class="interactive-card rounded border border-ringilAccent/30 bg-ringilPanel p-6 shadow-glow">
+          <p class="text-xs uppercase tracking-[0.24em] text-ringilMuted">Target Engagement Cost</p>
+          <p class="mt-2 text-3xl font-semibold text-white">&lt; $150</p>
+          <p class="mt-2 text-sm text-ringilText">Development target for low-cost defense against repeated drone attacks.</p>
+        </article>
+        <article class="interactive-card rounded border border-ringilAccent/30 bg-ringilPanel p-6 shadow-glow">
+          <p class="text-xs uppercase tracking-[0.24em] text-ringilMuted">Target Engagement Time</p>
+          <p class="mt-2 text-3xl font-semibold text-white">&lt; 500 ms</p>
+          <p class="mt-2 text-sm text-ringilText">Development target for fast threat response in close-range intercept windows.</p>
+        </article>
+      </div>
+      <article class="interactive-card mt-4 rounded border border-ringilAccent/30 bg-ringilPanel p-6 shadow-glow sm:max-w-[50%]">
+        <p class="text-xs uppercase tracking-[0.24em] text-ringilMuted">Target Total System Cost</p>
+        <p class="mt-2 text-3xl font-semibold text-white">&lt; $50K</p>
+        <p class="mt-2 text-sm text-ringilText">Development target with modular, vehicle-mounted integration across diverse fleets.</p>
+      </article>
+      <p class="mt-6 max-w-3xl text-sm text-ringilMuted">
+        All performance and cost values shown are development targets and subject to testing, validation, and program updates.
+      </p>
+    </section>
+
+    <hr class="mx-auto h-px w-[92%] border-0 bg-gradient-to-r from-transparent via-ringilAccent/70 to-transparent shadow-glow">
+
+    <section id="status" class="reveal mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <p class="text-xs uppercase tracking-[0.28em] text-ringilMuted">Status</p>
+      <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">Early stage. Building with intent.</h2>
+      <div class="mt-8 max-w-3xl space-y-4 text-lg leading-relaxed text-ringilText">
+        <p>Ringil Industries is an early-stage defense technology company actively building and validating autonomous active protection systems.</p>
+        <p>We are not open for press inquiries. We are open to inquiries. Contact us directly.</p>
+      </div>
+    </section>
+
+    <hr class="mx-auto h-px w-[92%] border-0 bg-gradient-to-r from-transparent via-ringilAccent/70 to-transparent shadow-glow">
+
+    <section id="contact" class="reveal mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <p class="text-xs uppercase tracking-[0.28em] text-ringilMuted">Contact</p>
+      <h2 class="mt-3 text-3xl font-semibold text-white md:text-4xl">For inquiries.</h2>
+      <p class="mt-8 max-w-3xl text-lg leading-relaxed text-ringilText">
+        Reach the team directly for inquiries.
+      </p>
+      <div class="mt-8 space-y-4 text-base leading-relaxed text-ringilText">
+        <p class="font-medium text-white">Ringil Industries LLC</p>
+        <p>
+          <a
+            href="mailto:asvath.madhan@ringilindustries.com"
+            class="text-ringilAccent transition hover:text-white focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg"
+          >asvath.madhan@ringilindustries.com</a>
+        </p>
+        <p>
+          <a
+            href="tel:+19793174433"
+            class="text-ringilAccent transition hover:text-white focus:outline-none focus:ring-2 focus:ring-ringilAccent focus:ring-offset-2 focus:ring-offset-ringilBg"
+          >979-317-4433</a>
+        </p>
+        <address class="not-italic text-ringilText">
+          5900 Balcones Drive Ste 100<br>
+          Austin, TX 78731
+        </address>
+      </div>
+    </section>
+  </main>
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.16 }
+    );
+    reveals.forEach((section) => observer.observe(section));
+  </script>
+</body>
+</html>
